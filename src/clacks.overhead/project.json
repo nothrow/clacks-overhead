@@ -1,16 +1,43 @@
 {
+  "name": "clacks.overhead",
+  "title": "X-Clacks-Overhead: GNU Terry Pratchett",
+  "description": "Man is not dead while his name is still spoken",
+  "packOptions": {
+    "licenseUrl": "https://opensource.org/licenses/MIT",
+    "requireLicenseAcceptance": false,
+    "summary": "Package for including the tribute to Sir Terry Pratchett in ASP.NET Core web application",
+    "projectUrl": "https://github.com/nothrow/clacks-overhead",
+    "owners": ["nothrow"],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/nothrow/clacks-overhead"
+    },
+    "tags": ["terry", "pratchett", "core"]
+  },
+  "authors": [
+    "Vita Tauer - vita@nothrow.cz"
+  ],
+
   "version": "1.0.0-*",
+
   "buildOptions": {
     "warningsAsErrors": true
   },
   "dependencies": {
-    "JetBrains.Annotations": "10.2.0",
+    "JetBrains.Annotations": {
+      "version": "10.2.0",
+      "type": "build"
+    },
     "Microsoft.AspNetCore.Http.Abstractions": "1.0.0"
   },
   "frameworks": {
-    "netstandard1.3": {
-    },
-    "net46": {
-    }
+    "netstandard1.3": {},
+    "net46": {},
+    "net451": {}
+  },
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
   }
 }

@@ -1,4 +1,7 @@
 {
+  "authors": [
+    "Vía Tauer <vita@nothrow.cz>"
+  ],
   "version": "1.0.0-*",
 
   "testRunner": "xunit",
