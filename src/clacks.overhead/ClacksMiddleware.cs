@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
 
@@ -25,8 +26,10 @@ namespace clacks.overhead
         /// </summary>
         /// <param name="httpContext"></param>
         /// <returns></returns>
-        public Task Invoke(HttpContext httpContext)
+        public Task Invoke([NotNull] HttpContext httpContext)
         {
+            if (httpContext == null) throw new ArgumentNullException(nameof(httpContext));
+
             try
             {
                 httpContext.Response.Headers.Add(ClacksOverheadHttpHeader, SirTerryPratchett);
