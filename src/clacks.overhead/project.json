@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "warningsAsErrors": true
+  },
+  "dependencies": {
+    "JetBrains.Annotations": "10.2.0",
+    "Microsoft.AspNetCore.Http.Abstractions": "1.0.0"
+  },
+  "frameworks": {
+    "netstandard1.3": {
+    },
+    "net46": {
+    }
+  }
+}
